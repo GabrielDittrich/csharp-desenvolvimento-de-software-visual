@@ -1,5 +1,8 @@
 ### Requisição para a raiz da API
 GET http://localhost:5087
 
-### Requisição para a segunda funcionalidade da API
+### Requisição para a segunda funcionalidade
 GET http://localhost:5087/items
+
+###
+GET http://localhost:5087/retornarendereco

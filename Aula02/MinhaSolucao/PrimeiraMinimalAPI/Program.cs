@@ -15,5 +15,15 @@ app.MapPost("/items", () => "Adicionar um novo item");
 
 app.MapGet("/items/{id}", (int id) => $"Obter item com ID {id}");
 
+//  Endpoint Dinamico
+app.MapGet("/retornarendereco", () =>
+{
+    dynamic endereco = new
+    {
+        rea = "Praça Osório",
+        numero = 125
+    };
+    return endereco;
+});
 
 app.Run();
