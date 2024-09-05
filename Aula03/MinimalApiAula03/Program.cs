@@ -39,8 +39,11 @@ app.MapGet("/produto/listar", () =>
     return produtos;
 });
 
-app.MapPost("/produtos/cadastrar", () =>
+app.MapPost("/produtos/cadastrar/{nome}", (string nome) =>
 {
+    Produto produto = new Produto();
+    produto.Nome = nome;
+    produtos.Add(produto);
     return produtos;
 });
 
