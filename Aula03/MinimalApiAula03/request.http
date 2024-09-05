@@ -3,3 +3,6 @@ GET http://localhost:5163
 
 ###
 GET http://localhost:5163/produto/listar
+
+### Cadastrar Produtos
+POST http://localhost:5163/produtos/cadastrar/jonas
