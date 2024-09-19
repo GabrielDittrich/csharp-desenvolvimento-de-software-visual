@@ -18,6 +18,16 @@ Content-Type: application/json
     "Quantidade" : 5 
 }
 
+### Alterar Produto
+PUT http://localhost:5195/produto/alterar/1
+Content-Type: application/json
+
+{
+    "Nome": "Produto A Modificado",
+    "Preco": 24.99,
+    "Quantidade": 15
+}
+
 ### Deletar Produto
 DELETE http://localhost:5195/produto/deletar/3
 

@@ -63,6 +63,26 @@ app.MapPost("/produto/cadastrar", ([FromBody] Produto produto) =>
     return Results.Created(" ", produtos);
 });
 
+// PUT: http://localhost:5163/produto/alterar/{id}
+app.MapPut("/produto/alterar/{id}", ([FromRoute] string id, [FromBody] Produto produtoAlterado) =>
+{
+    // Encontrar o produto a ser alterado pelo ID
+    Produto produtoExistente = produtos.FirstOrDefault(p => p.Id == id);
+
+    if (produtoExistente != null)
+    {
+        // Atualizar os dados do produto
+        produtoExistente.Nome = produtoAlterado.Nome;
+        produtoExistente.Preco = produtoAlterado.Preco;
+        produtoExistente.Quantidade = produtoAlterado.Quantidade;
+
+        return Results.Ok($"Produto com Id {id} atualizado com sucesso!");
+    }
+
+    return Results.NotFound($"Produto com Id {id} não encontrado.");
+});
+
+
 // DELETE: http://localhost:5163/produto/deletar/{id}
 app.MapDelete("/produto/deletar/{id}", ([FromRoute] string id) =>
 {
