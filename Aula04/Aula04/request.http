@@ -1,0 +1,21 @@
+### Requisição para a raiz da API
+GET http://localhost:5195
+
+###
+GET http://localhost:5195/produto/listar
+
+### Buscar Produto
+GET http://localhost:5195/produto/buscar/Banana
+
+### Cadastrar Produtos
+POST http://localhost:5195/produto/cadastrar/
+Content-Type: application/json
+
+{
+    "Nome" : "Banana",
+    "Preco" : 10.00,
+    "Quantidade" : 5 
+}
+
+
+ 
