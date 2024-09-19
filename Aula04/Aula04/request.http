@@ -12,10 +12,13 @@ POST http://localhost:5195/produto/cadastrar/
 Content-Type: application/json
 
 {
+    "Id" : "4",
     "Nome" : "Banana",
     "Preco" : 10.00,
     "Quantidade" : 5 
 }
 
+### Deletar Produto
+DELETE http://localhost:5195/produto/deletar/3
 
  

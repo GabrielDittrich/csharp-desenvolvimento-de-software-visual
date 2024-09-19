@@ -9,6 +9,7 @@ List<Produto> produtos = new List<Produto>
 {
     new Produto
     {
+        Id = "1",
         Nome = "Produto A",
         Preco = 19.99,
         Quantidade = 10,
@@ -62,6 +63,18 @@ app.MapPost("/produto/cadastrar", ([FromBody] Produto produto) =>
     return Results.Created(" ", produtos);
 });
 
+// DELETE: http://localhost:5163/produto/deletar/{id}
+app.MapDelete("/produto/deletar/{id}", ([FromRoute] string id) =>
+{
+    Produto produtoParaRemover = produtos.FirstOrDefault(p => p.Id == id);
+    
+    if (produtoParaRemover != null)
+    {
+        produtos.Remove(produtoParaRemover);
+        return Results.Ok($"Produto com Id {id} removido com sucesso!");
+    }
+    return Results.NotFound($"Produto com Id {id} não encontrado.");
+});
 
 /* Em java
 Produto produto = new Produto();
