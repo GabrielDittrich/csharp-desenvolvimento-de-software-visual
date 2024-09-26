@@ -45,16 +45,16 @@ app.MapGet("/produto/listar", () =>
 });
 
 // GET:  http://localhost:5163/produto/buscar
-app.MapGet("/produto/buscar/{nome}", ([FromRoute] string nome) =>
+app.MapGet("/produto/buscar/{id}", ([FromRoute] string id) =>
 {
-    foreach (Produto produtoCadastrado in produtos)
+    // Expresssão lambda em c#
+    Produto? produto = produtos.Find(x => x.Id == id);
+
+    if (produto == null)
     {
-        if (produtoCadastrado.Nome == nome)
-        {
-            return Results.Ok(produtoCadastrado);
-        }
+        return Results.NotFound();
     }
-    return Results.NotFound();
+    return Results.Ok();
 });
 
 app.MapPost("/produto/cadastrar", ([FromBody] Produto produto) =>
@@ -87,7 +87,7 @@ app.MapPut("/produto/alterar/{id}", ([FromRoute] string id, [FromBody] Produto p
 app.MapDelete("/produto/deletar/{id}", ([FromRoute] string id) =>
 {
     Produto produtoParaRemover = produtos.FirstOrDefault(p => p.Id == id);
-    
+
     if (produtoParaRemover != null)
     {
         produtos.Remove(produtoParaRemover);
