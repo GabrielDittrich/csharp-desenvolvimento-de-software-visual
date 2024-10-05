@@ -5,7 +5,7 @@ GET http://localhost:5195
 GET http://localhost:5195/produto/listar
 
 ### Buscar Produto
-GET http://localhost:5195/produto/buscar/Banana
+GET http://localhost:5195/produto/buscar/1
 
 ### Cadastrar Produtos
 POST http://localhost:5195/produto/cadastrar/

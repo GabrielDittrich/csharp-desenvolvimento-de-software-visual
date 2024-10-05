@@ -54,7 +54,7 @@ app.MapGet("/produto/buscar/{id}", ([FromRoute] string id) =>
     {
         return Results.NotFound();
     }
-    return Results.Ok();
+    return Results.Ok(produto);
 });
 
 app.MapPost("/produto/cadastrar", ([FromBody] Produto produto) =>
