@@ -1,0 +1,28 @@
+### Testar a raiz do projeto
+GET http://localhost:5256
+
+### Listar Tarefas
+GET  http://localhost:5256/api/tarefas/listar
+
+### Buscar Uma Tarefa pelo id
+GET  http://localhost:5256/api/tarefas/buscar/2
+
+### Cadastrar tarefa
+POST http://localhost:5256/api/tarefas/cadastrar
+Content-Type: application/json
+
+{
+    "nome" : "Estudar para a prova de Dev Visual"
+}
+
+### Alterar Tarefa
+PUT  http://localhost:5256/api/tarefas/alterar/6
+Content-Type: application/json
+
+{
+    "nome" : "Lembrar que apartir de semana que vem, tem aula com presencial, com prova"
+}
+
+
+### Buscar Uma Tarefa pelo id
+DELETE  http://localhost:5256/api/tarefas/deletar/3
