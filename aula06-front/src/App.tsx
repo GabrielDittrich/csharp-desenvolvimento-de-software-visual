@@ -1,9 +1,11 @@
 import React from 'react';
+import ComponenteExemplo from './ComponenteExemplo';
+import ConsultarCep from './ConsultarCep';
 
 function App() {
   return (
     <div className="App">
-      <h1>Primeira aplicação em React!</h1>
+      <ConsultarCep></ConsultarCep>
     </div>
   );
 }
