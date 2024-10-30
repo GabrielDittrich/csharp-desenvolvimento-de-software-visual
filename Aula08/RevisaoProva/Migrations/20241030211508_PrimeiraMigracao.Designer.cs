@@ -10,7 +10,7 @@ using RevisaoProva.Models;
 namespace RevisaoProva.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20241030210316_PrimeiraMigracao")]
+    [Migration("20241030211508_PrimeiraMigracao")]
     partial class PrimeiraMigracao
     {
         /// <inheritdoc />

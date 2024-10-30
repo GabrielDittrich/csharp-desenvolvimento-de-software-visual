@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RevisaoProva.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -72,15 +73,15 @@ app.MapGet("/api/folha/listar", ([FromServices] AppDataContext ctx) =>
 {
     if (ctx.Folhas.Any())
     {
-        return Results.Ok(ctx.Folhas.ToList());
+        return Results.Ok(ctx.Folhas.Include(x => x.Funcionario).ToList());
     }
     return Results.NotFound();
 });
 
-app.MapGet("/api/folha/buscar/{mes}/{ano}", ([FromServices] AppDataContext ctx, [FromRoute] int mes, [FromRoute] int ano) =>
+app.MapGet("/api/folha/buscar/{cpf}/{mes}/{ano}", ([FromServices] AppDataContext ctx, [FromRoute] int mes, [FromRoute] int ano, [FromRoute] string cpf) =>
 {
 
-    Folha? folha = ctx.Folhas.FirstOrDefault(f => f.Mes == mes && f.Ano == ano);
+    Folha? folha = ctx.Folhas.Include(x => x.Funcionario).FirstOrDefault(f => f.Funcionario.Cpf == cpf && f.Mes == mes && f.Ano == ano);
 
     if (folha is null)
     {
