@@ -1,8 +1,15 @@
-using Aula04.Models;
 using Microsoft.AspNetCore.Mvc;
 using MinimalApiAula04.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.AddDbContext<AppDataContext>();
+builder.AddCors(
+    options => options.AddPolicy("Acesso Total",
+    configs => configs
+    .AllowAnyOrigin()
+    .AllowAnyHeader()
+    .AllowAnyMethot());
+)
 var app = builder.Build();
 
 //Lista de Produtos
@@ -102,5 +109,5 @@ Produto produto = new Produto();
 produto.setPreco(8800);
 System.out.println("O produto custa "+ produto.getPreco()); */
 
-
+app.C
 app.Run();

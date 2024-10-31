@@ -5,7 +5,7 @@ import ConsultarCep from './ConsultarCep';
 function App() {
   return (
     <div className="App">
-      <ConsultarCep></ConsultarCep>
+       <ConsultarCep></ConsultarCep>
     </div>
   );
 }
