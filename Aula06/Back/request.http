@@ -1,0 +1,28 @@
+### Listar Produtos
+GET http://localhost:5020/produto/listar
+
+### Buscar Produto
+GET http://localhost:5020/produto/buscar/1
+
+### Cadastrar Produtos
+POST http://localhost:5020/produto/cadastrar/
+Content-Type: application/json
+
+{
+    "Nome" : "Banana",
+    "Preco" : 10.00,
+    "Quantidade" : 5 
+}
+
+### Alterar Produto
+PUT http://localhost:5020/produto/alterar/3
+Content-Type: application/json
+
+{
+    "Nome": "Produto A Modificado",
+    "Preco": 24.99,
+    "Quantidade": 15
+}
+
+### Deletar Produto
+DELETE http://localhost:5020/produto/deletar/3
