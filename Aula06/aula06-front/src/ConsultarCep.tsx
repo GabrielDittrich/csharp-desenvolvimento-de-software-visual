@@ -16,7 +16,7 @@ function ConsultarCep(){
     });
 
     function consultarCep(){
-        fetch("https://viacep.com.br/ws/" + {cep}  + "/json/")
+        fetch("https://viacep.com.br/ws/" + cep  + "/json/")
         .then(resposta => {
             return resposta.json();
         })
