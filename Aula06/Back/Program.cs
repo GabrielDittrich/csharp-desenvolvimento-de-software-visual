@@ -2,6 +2,15 @@ using Back.Models;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<AppDataContext>();
+builder.Services.AddCors( // Configurando o Cors
+    options => options.AddPolicy("Acesso Total",
+     configs => configs
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod())
+);
+
 var app = builder.Build();
 
 //Lista de Produtos
@@ -102,5 +111,5 @@ Produto produto = new Produto();
 produto.setPreco(8800);
 System.out.println("O produto custa "+ produto.getPreco()); */
 
-
+app.UseCors("Acesso Total"); // Dar acesso ao cors
 app.Run();
