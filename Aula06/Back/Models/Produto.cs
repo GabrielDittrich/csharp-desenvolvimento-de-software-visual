@@ -13,7 +13,7 @@ public class Produto
     public string? Id { get; set; }
 
     public string? Nome { get; set; }
-    
+
     public string? Descricao { get; set; }
 
 
@@ -23,4 +23,7 @@ public class Produto
 
     public DateTime CriadoEm { get; set; }
 
+    public Categoria Categorias { get; set; }
+
+    public int CategoriaId { get; set; }
 }

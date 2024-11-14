@@ -7,7 +7,7 @@ function ListarProdutos() {
 
     useEffect(() => {
         consultarProdutos();
-    });
+    }, []);
 
     function consultarProdutos() {
         fetch("http://localhost:5020/produto/listar")

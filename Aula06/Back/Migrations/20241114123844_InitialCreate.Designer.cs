@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Back.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20241031185249_SecondMigration")]
-    partial class SecondMigration
+    [Migration("20241114123844_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,6 +42,9 @@ namespace Back.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("CategoriaId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
@@ -59,7 +62,20 @@ namespace Back.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoriaId");
+
                     b.ToTable("Produtos");
+                });
+
+            modelBuilder.Entity("Back.Models.Produto", b =>
+                {
+                    b.HasOne("Back.Models.Categoria", "Categorias")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Categorias");
                 });
 #pragma warning restore 612, 618
         }

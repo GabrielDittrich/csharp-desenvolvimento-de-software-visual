@@ -13,7 +13,7 @@ function ConsultarCEP() {
         //o componente está sendo aberto ou renderizado
         //Biblioteca de requisições - AXIOS
         //consultarCEP();
-    });
+    }, []);
 
     function consultarCEP() {
         fetch("https://viacep.com.br/ws/" + cep + "/json/")
