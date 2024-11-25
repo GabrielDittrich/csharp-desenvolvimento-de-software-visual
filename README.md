@@ -1,4 +1,4 @@
-# CSharp - Desenvolvimento de Software Visual
+# Desenvolvimento de Software Visual - Universidade Positivo
 
 Este repositório contém os projetos desenvolvidos na disciplina **Desenvolvimento de Software Visual**, que abordou o desenvolvimento de aplicações frontend e backend utilizando tecnologias modernas como C#, .NET Core, React e TypeScript.
 
