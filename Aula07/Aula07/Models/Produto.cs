@@ -1,29 +1,23 @@
 using System;
 
-namespace Back.Models;
+namespace Aula07.Models;
 
 public class Produto
 {
+    //C# - Construtor
     public Produto()
     {
         Id = Guid.NewGuid().ToString();
         CriadoEm = DateTime.Now;
     }
-
+    //C# - Atributos/Propriedades/Características, get e set
     public string? Id { get; set; }
-
     public string? Nome { get; set; }
-
     public string? Descricao { get; set; }
-
-
     public double Preco { get; set; }
-
     public int Quantidade { get; set; }
-
     public DateTime CriadoEm { get; set; }
-
     public Categoria Categoria { get; set; }
-
     public int CategoriaId { get; set; }
+
 }

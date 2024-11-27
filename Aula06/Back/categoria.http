@@ -1,0 +1,15 @@
+@base_url = http://localhost:5020
+
+### Requisação para a raiz da aplicação
+GET {{base_url}}
+
+### Listar categorias
+GET {{base_url}}/api/categoria/listar
+
+### Cadastrar categoria
+POST {{base_url}}/api/categoria/cadastrar
+Content-Type: application/json
+
+{
+    "nome" : "Frutas"
+}

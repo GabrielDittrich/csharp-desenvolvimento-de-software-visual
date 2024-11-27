@@ -1,6 +1,5 @@
 import React from 'react';
 import ListarProduto from './components/pages/ListarProdutos';
-import CadastroProduto from './components/pages/CadastroProduto';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import ListarProdutos from './components/pages/ListarProdutos';
 
@@ -27,8 +26,8 @@ function App() {
         </nav>
         <div id='conteudo'>
           <Routes>
-            <Route path='/' element={<ListarProdutos></ListarProdutos>} />
-            <Route path='/pages/produto/cadastrar' element={<CadastroProduto></CadastroProduto>} />
+            <Route path='/pages/produto/listar' element={<ListarProdutos></ListarProdutos>} />
+            <Route path='/pages/produto/cadastrar' element={Cadastro</CadastroProduto>} />
 
           </Routes>
         </div>

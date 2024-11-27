@@ -1,4 +1,4 @@
-using Back.Models;
+using Aula07.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,10 +12,8 @@ builder.Services.AddCors( // Configurando o Cors
                 .AllowAnyHeader()
                 .AllowAnyMethod())
 );
-
 var app = builder.Build();
 
-//Lista de Produtos
 List<Produto> produtos =
 [
     new Produto { Nome = "Camiseta", Preco = 29.99, Quantidade = 100 },
@@ -30,9 +28,6 @@ List<Produto> produtos =
     new Produto { Nome = "Tênis Casual", Preco = 129.99, Quantidade = 25 }
 ];
 
-//Endpoints - Funcionalidade
-//Request/Requisição - URL e o método/verbo HTTP
-//Response/Resposta - Dados (json ou xml) e códigos de status HTTP
 app.MapGet("/", () => "API de Produtos");
 
 //GET: /api/categoria/listar
@@ -81,28 +76,20 @@ app.MapGet("/api/produto/buscar/{id}", ([FromRoute] string id,
     return Results.Ok(produto);
 });
 
-// POST: /api/produto/cadastrar
+//POST: /api/produto/cadastrar
 app.MapPost("/api/produto/cadastrar", ([FromBody] Produto produto,
     [FromServices] AppDataContext ctx) =>
 {
-    if (produto == null || produto.CategoriaId <= 0)
-    {
-        return Results.BadRequest("Dados do produto inválidos ou CategoriaId ausente.");
-    }
-
     Categoria? categoria = ctx.Categorias.Find(produto.CategoriaId);
     if (categoria is null)
     {
-        return Results.NotFound("Categoria não encontrada");
+        return Results.NotFound();
     }
-
     produto.Categoria = categoria;
     ctx.Produtos.Add(produto);
     ctx.SaveChanges();
     return Results.Created("", produto);
 });
-
-
 
 //DELETE: /api/produto/deletar/{id}
 app.MapDelete("/api/produto/deletar/{id}", ([FromRoute] string id,

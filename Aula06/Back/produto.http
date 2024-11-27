@@ -1,0 +1,35 @@
+@base_url = http://localhost:5020
+
+### Requisação para a raiz da aplicação
+GET {{base_url}}
+
+### Listar produtos
+GET {{base_url}}/api/produto/listar
+
+### Buscar produto
+GET {{base_url}}/api/produto/buscar/deaa13e5-4d58-44bc-98c6-576f95893d18
+
+### Cadastrar produto
+POST {{base_url}}/api/produto/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "Novo Produto",
+    "descricao": "Descrição do produto",
+    "preco": 99.99,
+    "quantidade": 10,
+    "categoriaId": 1
+}
+
+### Deletar produto
+DELETE {{base_url}}/api/produto/deletar/8074410c-65ae-4d68-b15a-d1f11ad5e568
+
+### Alterar produto
+PUT {{base_url}}/api/produto/alterar/e6f1115d-d1b0-49ac-b245-2103f59cd190
+Content-Type: application/json
+
+{
+    "nome" : "Água",
+    "preco" : 4.5,
+    "quantidade" : 153
+}

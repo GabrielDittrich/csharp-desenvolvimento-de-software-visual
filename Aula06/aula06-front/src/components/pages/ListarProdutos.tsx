@@ -1,22 +1,20 @@
 import { useEffect, useState } from "react";
-import "./ListarProdutos.css";
 import { Produto } from "../../models/Produto";
+import "./ListarProdutos.css";
 
 function ListarProdutos() {
     const [produtos, setProdutos] = useState<Produto[]>([]);
 
     useEffect(() => {
-        consultarProdutos();
-    }, []);
-
-    function consultarProdutos() {
-        fetch("http://localhost:5020/produto/listar")
-            .then((resposta) => resposta.json())
-            .then((produtos) => {
-                setProdutos(produtos);
-                console.table(produtos);
-            });
-    }
+        fetch("http://localhost:5020/api/produto/listar")
+          .then((resposta) => {
+            return resposta.json();
+          })
+          .then((produtos) => {
+            setProdutos(produtos);
+          });
+      });
+    
 
     return (
         <div id="listar-produtos">
@@ -26,6 +24,7 @@ function ListarProdutos() {
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
+                        <th>Categoria</th>
                         <th>Criado em</th>
                     </tr>
                 </thead>
@@ -34,6 +33,7 @@ function ListarProdutos() {
                         <tr>
                             <td>{produto.id}</td>
                             <td>{produto.nome}</td>
+                            <th>{produto.categoria?.nome}</th>
                             <td>{produto.criadoEm}</td>
                         </tr>
                     ))}

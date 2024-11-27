@@ -1,101 +1,73 @@
-/* Estilos gerais para o corpo da página */
+/* Define a fonte base e remove margens/paddings */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    background-color: #f5f5f5;
 }
 
-/* Container principal */
+/* Centraliza o conteúdo */
 div {
-    background-color: #fff;
+    max-width: 750px;
+    margin: 50px auto;
     padding: 20px;
+    background: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
 }
 
-/* Título */
+/* Estiliza o título */
 h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Estilo do formulário */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Estilo para os labels e inputs */
+/* Estiliza os rótulos */
 label {
-    font-size: 14px;
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
     color: #555;
 }
 
+/* Estiliza os inputs */
 input[type="text"],
 input[type="number"] {
+    width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-sizing: border-box;
-    transition: border-color 0.3s;
 }
 
-/* Efeito no foco dos inputs */
+/* Efeito ao focar nos inputs */
 input[type="text"]:focus,
 input[type="number"]:focus {
-    border-color: #007bff;
+    border-color: #007BFF;
     outline: none;
 }
 
-/* Estilo do botão de submit */
+/* Estiliza o botão */
 button {
-    background-color: #007bff;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    display: block;
     width: 100%;
-    box-sizing: border-box;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Efeito no hover do botão */
+/* Efeito hover no botão */
 button:hover {
     background-color: #0056b3;
 }
 
-/* Estilo para campos obrigatórios */
-input[required] {
-    border-color: #f8d7da;
-}
-
-/* Responsividade: garantir que o formulário não ultrapasse os limites em telas pequenas */
-@media (max-width: 600px) {
-    div {
-        padding: 15px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    input[type="text"],
-    input[type="number"],
-    button {
-        font-size: 14px;
-    }
+/* Espaçamento entre os elementos */
+form > label:not(:last-child) {
+    margin-bottom: 20px;
 }
