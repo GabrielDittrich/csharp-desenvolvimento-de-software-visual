@@ -1,72 +1,97 @@
-# Desenvolvimento de Software Visual - Universidade Positivo
+# 🎓 Desenvolvimento de Software Visual - Universidade Positivo
 
-Este repositório contém os projetos desenvolvidos na disciplina **Desenvolvimento de Software Visual**, que abordou o desenvolvimento de aplicações frontend e backend utilizando tecnologias modernas como C#, .NET Core, React e TypeScript.
+Este repositório reúne os projetos desenvolvidos na disciplina **Desenvolvimento de Software Visual**, parte do curso de **Análise e Desenvolvimento de Sistemas da Universidade Positivo**.
+
+Durante a disciplina, foram exploradas tecnologias modernas para o desenvolvimento de aplicações **frontend e backend**, utilizando **C# com .NET Core** no servidor e **React com TypeScript** na interface.
+
+---
+
+## 👨‍🏫 Professor
+
+Diogo Steinnke Deconto  
+Com apoio de ferramentas de IA generativa  
+[📘 Conteúdo da disciplina no Notion](https://careful-bite-81a.notion.site/Desenvolvimento-Web-Avan-ado-f752a914be3c4d09acb1acedb74bff21?pvs=143)
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
-### Backend:
-- **C#**: Linguagem de programação para desenvolvimento da API.
-- **.NET Core**: Framework para criação de aplicações robustas e escaláveis.
-- **Minimal API**: Abordagem simplificada para criar APIs RESTful.
-- **Entity Framework**: Framework ORM utilizado para manipulação de dados no banco de dados.
-- **SQLite**: Banco de dados leve e eficiente utilizado nos projetos.
+### 🔧 Backend
+- **C#** – Linguagem de programação para desenvolvimento da API
+- **.NET Core** – Framework para criação de aplicações robustas e escaláveis
+- **Minimal API** – Abordagem simplificada para criação de APIs RESTful
+- **Entity Framework Core** – ORM para manipulação de dados
+- **SQLite** – Banco de dados leve e eficiente
 
-### Frontend:
-- **React**: Biblioteca JavaScript para criação de interfaces de usuário.
-- **TypeScript**: Superset do JavaScript, usado para maior tipagem e escalabilidade do código.
-- **Fetch**: Para consumo de APIs no frontend.
+### 🎨 Frontend
+- **React** – Biblioteca JavaScript para construção de interfaces de usuário
+- **TypeScript** – Superset do JavaScript com tipagem estática
+- **Fetch API** – Comunicação com a API via HTTP
 
-## 📚 Conteúdo Aprendido
+---
 
-Na disciplina, foram abordados os seguintes tópicos:
+## 📚 Conteúdos Abordados
 
-### Backend:
-- **Minimal API**: Criação de APIs simples e performáticas.
-- **Criação de Endpoints**: Implementação de endpoints com:
-  - Métodos HTTP (GET, POST, PUT, DELETE).
-  - Códigos de resposta HTTP e URL.
-  - Recebimento de dados pela URL e pelo corpo da requisição.
-- **Banco de Dados**:
-  - Uso do Entity Framework para integração com SQLite.
-  - Modelagem e implementação de relacionamento entre tabelas.
-  - Operações de CRUD.
+### 🔙 Backend
+- Criação de **endpoints** RESTful (GET, POST, PUT, DELETE)
+- Utilização de códigos de status HTTP apropriados
+- Recebimento de dados via **URL** e **body**
+- Integração com **Entity Framework** e **SQLite**
+- Modelagem de banco de dados e operações CRUD
 
-### Frontend:
-- **React**:
-  - Criação de componentes reutilizáveis.
-  - Implementação de navegação entre páginas.
-  - Integração com a API utilizando Fetch.
-  - Interação com elementos HTML e estados.
-- **TypeScript**:
-  - Desenvolvimento com tipagem forte para maior robustez do código.
+### 🔜 Frontend
+- Criação de **componentes reutilizáveis** em React
+- Navegação entre páginas (React Router)
+- Integração com a API usando **Fetch**
+- Manipulação de estados com `useState`, `useEffect`, etc.
+- Tipagem de props e dados com **TypeScript**
+
+---
 
 ## 🚀 Como Executar o Projeto
 
-### Pré-requisitos
-Certifique-se de ter instalado:
-- **Node.js** (para rodar o React com TypeScript)
-- **.NET SDK** (para rodar o backend)
-- **SQLite** (para banco de dados, caso necessário)
+### ✔️ Pré-requisitos
 
-### Passos
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/csharp-desenvolvimento-de-software-visual.git
-2. Configure o banco de dados SQLite e verifique as strings de conexão no backend.
-3. Inicie o backend:
-   ```bash
-   cd backend
-   dotnet run
-4. Inicie o frontend:
-   ```bash
-    cd frontend
-    npm install
-    npm start
-5. Acesse a aplicação no navegador:
+- [.NET SDK](https://dotnet.microsoft.com/)  
+- [Node.js + npm](https://nodejs.org/)  
+- SQLite (opcional: usado pelo EF Core)
 
+### ▶️ Passos
+
+```bash
+# Clone o repositório
+git clone https://github.com/GabrielDittrich/csharp-desenvolvimento-de-software-visual.git
+
+# BACKEND
+cd backend
+dotnet restore
+dotnet run
+
+# FRONTEND
+cd ../frontend
+npm install
+npm start
+```
+## 🌐 Acesse no navegador:
 Frontend: http://localhost:3000
-API Endpoints: http://localhost:5000
 
-## 📂 Estrutura do Projeto
-- /backend: Contém a API desenvolvida com Minimal API em C#. </br>
-- /frontend: Contém a aplicação frontend desenvolvida em React com TypeScript.</br>
+API: http://localhost:5000
+
+## 📁 Estrutura do Projeto
+<pre>
+  csharp-desenvolvimento-de-software-visual/
+├── backend/      # API em .NET Core com Minimal API + EF Core
+│   ├── Controllers/
+│   ├── Models/
+│   ├── Data/
+│   └── Program.cs
+├── frontend/     # Frontend em React com TypeScript
+│   ├── src/
+│   ├── public/
+│   └── package.json
+</pre>
+
+### 📝 Observações
+Este projeto foi desenvolvido com fins educacionais como parte da disciplina Desenvolvimento de Software Visual na Universidade Positivo. Os conhecimentos adquiridos foram fundamentais para compreender o ciclo completo de desenvolvimento web moderno, incluindo integração entre front e back-end.
+
+
