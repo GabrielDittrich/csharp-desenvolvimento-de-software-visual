@@ -9,7 +9,6 @@ Durante a disciplina, foram exploradas tecnologias modernas para o desenvolvimen
 ## 👨‍🏫 Professor
 
 Diogo Steinnke Deconto  
-Com apoio de ferramentas de IA generativa  
 [📘 Conteúdo da disciplina no Notion](https://careful-bite-81a.notion.site/Desenvolvimento-Web-Avan-ado-f752a914be3c4d09acb1acedb74bff21?pvs=143)
 
 ---
